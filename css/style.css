@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --color: linear-gradient(0deg, rgba(44,136,127,0.58)25%, rgba(130,82,127,0.58)90%);
+}
+
+body{
+    font-family: 'Acme', sans-serif;
+    background: var(--color);
+    height: 100vh;
+    /*height: auto;*/
+
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+
+    transition: all 0.3s ease;
+
+}
+
+body.shownav{
+    transform: translate(250px);
+}
+
+nav{
+    width: 250px;
+    height: 100vh;
+    background: var(--color);
+    color: #fff;
+
+    border-right: 2px solid rgba(200,200,200,0.1);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translate(-100%);
+}
+
+nav .logo img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+nav .logo{
+    padding: 30px 0;
+    text-align: center;
+
+}
+
+nav .logo img:hover{
+    border: 2px solid black;
+}
+
+nav .close-btn{
+    position: absolute;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    top: 5px;
+    right: 0;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li{
+    border-bottom: 2px solid rgba(200,200,200,0.6);
+    padding: 20px;
+    font-size: 20px;
+}
+
+nav ul li:first-of-type{
+    border-top: 2px solid rgba(200,200,200,0.6);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li:hover{
+    background: rgba(200,200,200,0.3);
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+header{
+    font-size: 150%;
+    padding: 30px 15px;
+    text-align: center;
+
+    position: relative;
+}
+
+.toggle {
+    background: transparent;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: none;
+
+    cursor: pointer;
+}
+
+.toggle.close{
+    display: none;
+}
+
+.toggle:focus{
+    outline: 0;
+}
+
+.toggle:active{
+    transform: scale(0.98);
+}
+
+header .hbtn{
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+}
+
+header .btn, .modal-form .submit-btn{
+    font-size: 15px;
+    font-family: inherit;
+    padding: 8px 15px;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+header .btn:hover{
+    background: rgba(0,0,0,0.3);
+}
+
+header .btn:active{
+    transform: scale(0.97);
+}
+
+header h1{
+    margin: 0;
+}
+
+.modal-container{
+    background: rgba(0,0,0,0.6);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: none;
+}
+
+.login-container{
+    background: rgba(0,0,0,0.6);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: none;
+
+}
+
+.modal-container.showmodal{
+    display: block;
+}
+
+.login-container.showmodal{
+    display: block;
+}
+
+.modal{
+    width: 400px;
+    background: #fff;
+    border-radius: 5px;
+
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+    overflow: hidden;
+}
+
+.close-btn{
+    background: transparent;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.modal-header{
+    background: var(--color);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.modal-content{
+    padding: 20px;
+}
+
+
+.login-modal-content{
+    padding: 20px;
+}
+
+.modal-form{
+    position: relative;
+}
+
+.login-modal-content small{
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+}
+
+
+.modal-form .form-group{
+    margin: 15px 0;
+}
+
+.modal-form label{
+    display: block;
+}
+
+.modal-form .form-input{
+    width: 100%;
+    padding: 8px;
+}
+
+.modal-form .submit-btn{
+    background: rgba(0,0,0,0.3);
+}
+
+.modal-form .submit-btn:active{
+    transform: scale(0.97);
+}
+
+.container{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lyrics{
+
+    margin-top: 80px;
+    width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(142,212,127,0.89);
+
+    position: relative;
+
+    display: none;
+}
+
+.closelyrics{
+    position: absolute;
+    background: transparent;
+    color: black;
+
+    top: 10px;
+    right: 10px;
+    border: 0;
+
+
+}
+
+.lyrics.active{
+    display: block;
+}
+
+.lyrics pre{
+    color: #fff;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.lyricsbtn {
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+
+    display: block;
+}
+
+.lyricsbtn.active{
+    display: none;
+}
+
+.lyricsbtn:active{
+    transform: scale(0.98);
+}
+
+
+.music-container{
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px rgba(142,212,127,0.89);
+    border: 2px solid rgba(142,212,127,0.89);
+
+    display: flex;
+
+    z-index: 0;
+
+    position: relative;
+}
+
+.img-container{
+    width: 110px;
+    position: relative;
+}
+
+.img-container img{
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation-name: myani;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+.progress-container{
+    background-color: #fff;
+    width: 80%;
+    height: 4px;
+
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+
+    /*position: absolute;*/
+
+    bottom: 30px;
+}
+
+.progress{
+    width: 0;
+    height: 100%;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.img-container::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+}
+
+@keyframes myani  {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-btn{
+    background-color: transparent;
+    color: rgba(105,102,127,0.87);
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.action-btn:hover{
+    color: rgba(130,82,127,0.58);
+}
+
+.action-btn:active{
+    transform: scale(0.97);
+}
+
+.action-btn.action-btn-big{
+    font-size: 30px;
+}
+
+.action-btn:focus{
+    outline: none;
+}
+
+.music-info{
+    width: calc(100% - 40px);
+    border-radius: 15px 15px 0 0;
+    border: 1px solid rgba(142,212,127,0.89);
+
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 1px 1px 10px 150px;
+
+    transform: translateY(0%);
+
+    z-index: -1;
+
+    opacity: 0;
+
+}
+
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+/*.music-info h4{*/
+/*    margin: 0;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
