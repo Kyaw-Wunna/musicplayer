@@ -38,7 +38,7 @@ const prevbtn = document.getElementById('prev'),
 
 let songindex = 0;
 
-const songs = ['Any%20Way%20You%20Want%20It','Lola%20Montez','Hate%20Me'];
+const songs = ['Any Way You Want It', 'Lola Montez', 'Hate Me'];
 // console.log(songs[songindex]);
 
 loadsong(songs[songindex]);
@@ -46,11 +46,11 @@ loadsong(songs[songindex]);
 function loadsong(music){
 
    let mtitle;
-   if(music === 'Any%20Way%20You%20Want%20It'){
+   if(music === 'Any Way You Want It'){
       mtitle = 'Any Way You Want It';
-   }else if(music === 'Lola%20Montez'){
+   }else if(music === 'Lola Montez'){
       mtitle = "Lola Montez";
-   }else if(music === 'Hate%20Me' ){
+   }else if(music === 'Hate Me' ){
       mtitle = "Hate Me";
    }
    title.innerText = mtitle;
